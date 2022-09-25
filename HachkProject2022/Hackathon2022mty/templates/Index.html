@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>🟣Hack MTY🟣</title>
 <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADYRyyvZgD6BPPmKh3ehrpKBw1zWHphSI google api key&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZEKZ171i2YQTZaGPh-mqbiawl5sLN24&callback=initMap">
 </script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"> </script>
 <script>
     let map;
 
@@ -20,6 +21,8 @@ function initMap() {
     zoom: 8,
   });
 }
+
+initMap();
 
 var marker = new google.maps.Marker({
 	position: {lat: 25.534671 , lng: -103.433260 },
@@ -39,8 +42,6 @@ function addMarker(coords){
 });
 }
 
-
-window.initMap = initMap;
 </script>
 </head>
 <body>
@@ -114,9 +115,7 @@ window.initMap = initMap;
         <section class="home-section">
             <div class="text">Analytics</div>
              <br>
-             <div id="map">
-
-             </div>
+              <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1o5W3EMq9ipaYiH-GvKoEaZ61-xlcx7Y&ehbc=2E312F" width="640" height="480"></iframe>
             
         </section>
         <script>
