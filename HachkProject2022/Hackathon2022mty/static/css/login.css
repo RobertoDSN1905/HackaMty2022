@@ -1,20 +1,22 @@
+html,
+body,
+.container {
+  min-height: 100vh;
+}
+
 .gradient-custom-2 {
   /* fallback for old browsers */
   background: #34006b;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to left,
-    rgba(52, 0, 107, 0.5),
-    rgba(13, 97, 242, 0.5)
-  );
+  background: -webkit-linear-gradient(to left,
+      rgba(52, 0, 107, 0.5),
+      rgba(13, 97, 242, 0.5));
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to left,
-    rgba(52, 0, 107, 0.5),
-    rgba(13, 97, 242, 0.5)
-  );
+  background: linear-gradient(to left,
+      rgba(52, 0, 107, 0.5),
+      rgba(13, 97, 242, 0.5));
 }
 
 .gradient-custom-3 {
@@ -22,18 +24,14 @@
   background: #34006b;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to left,
-    rgba(52, 0, 107, 0.5),
-    rgba(13, 97, 242, 0.5)
-  );
+  background: -webkit-linear-gradient(to left,
+      rgba(52, 0, 107, 0.5),
+      rgba(13, 97, 242, 0.5));
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to left,
-    rgba(52, 0, 107, 0.5),
-    rgba(13, 97, 242, 0.5)
-  );
+  background: linear-gradient(to left,
+      rgba(52, 0, 107, 0.5),
+      rgba(13, 97, 242, 0.5));
 }
 
 @media (min-width: 768px) {
@@ -47,4 +45,8 @@
     border-top-right-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
   }
+}
+
+.button-div {
+  width: 40%;
 }
