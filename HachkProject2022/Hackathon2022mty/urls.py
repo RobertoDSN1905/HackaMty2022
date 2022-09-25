@@ -4,5 +4,5 @@ from .views import HomePageView,LoginPageView
 
 urlpatterns = [
     path('',LoginPageView.as_view(),name="login"),
-    path('analitycs',HomePageView.as_view(),name="index")
+    path('analytics',HomePageView.as_view(),name="index")
 ]

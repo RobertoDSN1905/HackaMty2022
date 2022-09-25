@@ -7,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <title>🟣Hack MTY🟣</title>
-<script async
+<!-- <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZEKZ171i2YQTZaGPh-mqbiawl5sLN24&callback=initMap">
-</script>
+</script> -->
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"> </script>
 <script>
     let map;
@@ -22,7 +28,23 @@ function initMap() {
   });
 }
 
-initMap();
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
 
 var marker = new google.maps.Marker({
 	position: {lat: 25.534671 , lng: -103.433260 },
@@ -62,26 +84,12 @@ function addMarker(coords){
                <span class="tooltip">Home</span>
             </li>
             <li>
-             <a href="#" style="background-color:#00174c ;">
-                <i class="fa fa-gear" style="font-size:24px;color:#0889BB"></i>
-               <span class="links_name">Control tower</span>
-             </a>
-             <span class="tooltip">Control tower</span>
-           </li>
-           <li>
-             <a href="#" style="background-color:#00174c ;">
-                <i class="fa fa-bar-chart" style="font-size:24px;color:#8960CE"></i>
-               <span class="links_name">Analytics</span>
-             </a>
-             <span class="tooltip">Analytics</span>
-           </li>
-           <li>
-             <a href="#" style="background-color:#00174c ;">
-                <i class="fa fa-codepen" style="font-size:24px;color: cyan;"></i>
-               <span class="links_name">Analytics</span>
-             </a>
-             <span class="tooltip">Analytics</span>
-           </li>
+              <a href="#" style="background-color:#00174c ;">
+                 <i class="fa fa-bar-chart" style="font-size:24px;color:#8960CE"></i>
+                <span class="links_name">Analytics</span>
+              </a>
+              <span class="tooltip">Analytics</span>
+            </li>
            <li>
              <a href="#" style="background-color:#00174c ;">
                 <i class="fa fa-codepen" style="font-size:24px;color: greenyellow;"></i>
@@ -91,17 +99,10 @@ function addMarker(coords){
            </li>
            <li>
              <a href="#" style="background-color:#00174c ;">
-                <i class="fa fa-align-justify" style="font-size:24px;color:aqua"></i>
+              <i class="fa fa-solid fa-bell" style="font-size:24px;color: #068ABD;"></i>
                <span class="links_name">Notifications</span>
              </a>
              <span class="tooltip">Notifications</span>
-           </li>
-           <li>
-             <a href="#" style="background-color:#00174c ;">
-                <i class="fa fa-align-justify" style="font-size:24px;color: #068ABD;"></i>
-               <span class="links_name">Inbox</span>
-             </a>
-             <span class="tooltip">Inbox</span>
            </li>
            <li>
              <a href="#" style="background-color:#00174c ;">
@@ -112,12 +113,27 @@ function addMarker(coords){
            </li>
           </ul>
         </div>
+
         <section class="home-section">
             <div class="text">Analytics</div>
              <br>
-              <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1o5W3EMq9ipaYiH-GvKoEaZ61-xlcx7Y&ehbc=2E312F" width="640" height="480"></iframe>
-            
+              <div class="analytics-content">
+                <div class="map-section">
+                  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1o5W3EMq9ipaYiH-GvKoEaZ61-xlcx7Y&ehbc=2E312F" width="400" height="400"></iframe>
+                </div>
+  
+                <div class="linear-regression-section">
+                  <img src="../static/assets/linear_regression.png" alt="linear regression" width="400" height="400">
+                </div>
+              </div>
+
+              <div class="machine-learning">
+                <img src="../static/assets/machine_learning1.jpeg" alt="" width="300" height="300">
+                <img src="../static/assets/machine_learning2.jpeg" alt="" width="300" height="300">
+                <img src="../static/assets/machine_learning3.jpeg" alt="" width="300" height="300">
+              </div>
         </section>
+
         <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
