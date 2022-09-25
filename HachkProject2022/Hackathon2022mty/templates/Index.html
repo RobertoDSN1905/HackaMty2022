@@ -1,1 +1,147 @@
-<h1>prueba</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>🟣Hack MTY🟣</title>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADYRyyvZgD6BPPmKh3ehrpKBw1zWHphSI google api key&callback=initMap">
+</script>
+<script>
+    let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 25.535226, lng: -103.434849 },
+    zoom: 8,
+  });
+}
+
+var marker = new google.maps.Marker({
+	position: {lat: 25.534671 , lng: -103.433260 },
+	map:map,
+	icon:'pin.png'
+});
+
+addMarker({lat: 25.53418360044508,lng: -103.43337081343881});
+addMarker({lat: 25.534860000164368,lng: -103.43327092509354});
+addMarker({lat:25.53449162048221,lng: -103.43276724187278});
+
+function addMarker(coords){
+	var marker = new google.maps.Marker({
+	position: cords,
+	map:map,
+	icon: 'pin.png'
+});
+}
+
+
+window.initMap = initMap;
+</script>
+</head>
+<body>
+    <body>
+        <div class="sidebar" style="background-color:#00174C ;">
+          <div class="logo-details">
+            <i class='bx bxl-c-plus-plus icon'></i>
+              <div class="logo_name">Hack MTY</div>
+              <i class="fa fa-dot-circle-o" style="font-size:24px;color: white;;" id="btn" ></i>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-home" style="font-size:24px;color: #81B031;"></i>
+                <box-icon name='home-alt'></box-icon>
+                <span class="links_name">Home</span>
+              </a>
+               <span class="tooltip">Home</span>
+            </li>
+            <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-gear" style="font-size:24px;color:#0889BB"></i>
+               <span class="links_name">Control tower</span>
+             </a>
+             <span class="tooltip">Control tower</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-bar-chart" style="font-size:24px;color:#8960CE"></i>
+               <span class="links_name">Analytics</span>
+             </a>
+             <span class="tooltip">Analytics</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-codepen" style="font-size:24px;color: cyan;"></i>
+               <span class="links_name">Analytics</span>
+             </a>
+             <span class="tooltip">Analytics</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-codepen" style="font-size:24px;color: greenyellow;"></i>
+               <span class="links_name">File Manager</span>
+             </a>
+             <span class="tooltip">Files</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-align-justify" style="font-size:24px;color:aqua"></i>
+               <span class="links_name">Notifications</span>
+             </a>
+             <span class="tooltip">Notifications</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-align-justify" style="font-size:24px;color: #068ABD;"></i>
+               <span class="links_name">Inbox</span>
+             </a>
+             <span class="tooltip">Inbox</span>
+           </li>
+           <li>
+             <a href="#" style="background-color:#00174c ;">
+                <i class="fa fa-qrcode" style="font-size:24px;color: #068ABD;"></i>
+               <span class="links_name">My services</span>
+             </a>
+             <span class="tooltip">My services</span>
+           </li>
+          </ul>
+        </div>
+        <section class="home-section">
+            <div class="text">Energy supply anomalies map</div>
+             <br>
+             <div id="map">
+
+             </div>
+            
+        </section>
+        <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+      
+        closeBtn.addEventListener("click", ()=>{
+          sidebar.classList.toggle("open");
+          menuBtnChange();//calling the function(optional)
+        });
+      
+        searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+          sidebar.classList.toggle("open");
+          menuBtnChange(); //calling the function(optional)
+        });
+      
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+         if(sidebar.classList.contains("open")){
+           closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+         }else {
+           closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+         }
+        }
+        </script>
+      </body>
+</html>
